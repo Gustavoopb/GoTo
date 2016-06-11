@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhereGo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,164 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <pickerView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3n-Wm-Wrf">
+                                <rect key="frame" x="20" y="20" width="320" height="216"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="UvF-W8-Ybn"/>
+                                    <constraint firstAttribute="width" constant="270" id="ujc-1j-mb0"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UvF-W8-Ybn"/>
+                                        <exclude reference="ujc-1j-mb0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="140" width="290" height="100"/>
+                                    <mask key="constraints">
+                                        <include reference="UvF-W8-Ybn"/>
+                                        <include reference="ujc-1j-mb0"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="8bC-Xf-vdC" id="BLc-bX-fdS"/>
+                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="xSK-Fn-BDF"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRC-nB-0aN">
+                                <rect key="frame" x="20" y="211" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="3Hu-3K-Unz"/>
+                                    <constraint firstAttribute="height" constant="30" id="F6I-Xp-a9r"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="44" left="30" bottom="58" right="14"/>
+                                <state key="normal" title="Let's Go!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3Hu-3K-Unz"/>
+                                        <exclude reference="F6I-Xp-a9r"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="243" width="290" height="30"/>
+                                    <mask key="constraints">
+                                        <include reference="3Hu-3K-Unz"/>
+                                        <include reference="F6I-Xp-a9r"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="showCountry" destination="BYZ-38-t0r" eventType="touchUpInside" id="DZC-Cg-XRq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para onde vamos?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTE-NP-1EQ">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="udf-EQ-yyD"/>
+                                    <constraint firstAttribute="height" constant="25" id="vRg-wK-zmb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="udf-EQ-yyD"/>
+                                        <exclude reference="vRg-wK-zmb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="70" width="270" height="25"/>
+                                    <mask key="constraints">
+                                        <include reference="udf-EQ-yyD"/>
+                                        <include reference="vRg-wK-zmb"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <textView autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GIf-pj-sE3">
+                                <rect key="frame" x="20" y="281" width="300" height="86"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="HKF-wH-bgU"/>
+                                    <constraint firstAttribute="height" constant="128" id="I4N-T4-0Vm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HKF-wH-bgU"/>
+                                        <exclude reference="I4N-T4-0Vm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="314" width="290" height="128"/>
+                                    <mask key="constraints">
+                                        <include reference="HKF-wH-bgU"/>
+                                        <include reference="I4N-T4-0Vm"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.81176470590000005" green="0.1176470588" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hTE-NP-1EQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="1Nm-hN-m38"/>
+                            <constraint firstItem="FRC-nB-0aN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="240" id="OVi-kt-3zr"/>
+                            <constraint firstItem="GIf-pj-sE3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="nqs-wa-bTc"/>
+                            <constraint firstItem="hTE-NP-1EQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="sU6-3E-5u9"/>
+                            <constraint firstItem="GIf-pj-sE3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="300" id="tTo-zh-abh"/>
+                            <constraint firstItem="z3n-Wm-Wrf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="140" id="vXk-VC-bBf"/>
+                            <constraint firstItem="FRC-nB-0aN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="vsT-v3-eM2"/>
+                            <constraint firstItem="z3n-Wm-Wrf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="whN-2b-GnB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="z3n-Wm-Wrf"/>
+                                <exclude reference="FRC-nB-0aN"/>
+                                <exclude reference="hTE-NP-1EQ"/>
+                                <exclude reference="GIf-pj-sE3"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1Nm-hN-m38"/>
+                                <exclude reference="sU6-3E-5u9"/>
+                                <exclude reference="vXk-VC-bBf"/>
+                                <exclude reference="whN-2b-GnB"/>
+                                <exclude reference="OVi-kt-3zr"/>
+                                <exclude reference="vsT-v3-eM2"/>
+                                <exclude reference="nqs-wa-bTc"/>
+                                <exclude reference="tTo-zh-abh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="z3n-Wm-Wrf"/>
+                                <include reference="FRC-nB-0aN"/>
+                                <include reference="hTE-NP-1EQ"/>
+                                <include reference="GIf-pj-sE3"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1Nm-hN-m38"/>
+                                <include reference="sU6-3E-5u9"/>
+                                <include reference="vXk-VC-bBf"/>
+                                <include reference="whN-2b-GnB"/>
+                                <include reference="OVi-kt-3zr"/>
+                                <include reference="vsT-v3-eM2"/>
+                                <include reference="nqs-wa-bTc"/>
+                                <include reference="tTo-zh-abh"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="labelGoTo" destination="GIf-pj-sE3" id="FNb-2h-FLn"/>
+                        <outlet property="pickerViewContinent" destination="z3n-Wm-Wrf" id="pXa-Pa-CcW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-36" y="24"/>
         </scene>
     </scenes>
 </document>
